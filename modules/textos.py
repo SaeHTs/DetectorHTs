@@ -1,0 +1,183 @@
+# modules/textos.py
+"""Textos de la interfaz (es/en). Todo texto visible de la app vive aquí."""
+
+TEXTOS = {
+    "es": {
+        # Cabecera
+        "app_titulo": "Detector de procesos y servicios innecesarios v{version}",
+        "marca_titulo_1": "DETECTOR",
+        "marca_titulo_2": "HTS",
+        "marca_edicion": "PROCESOS Y SERVICIOS INNECESARIOS · WINDOWS",
+        "chip_listo": "LISTO",
+        "chip_trabajando": "TRABAJANDO",
+        "chip_activo": "COMPLETADO",
+        "chip_error": "ERROR",
+        # Botones
+        "btn_escanear": "Escanear",
+        "btn_procesos": "Terminar procesos seleccionados",
+        "btn_servicios": "Detener y deshabilitar servicios",
+        "btn_poner_manual": "Poner servicios en Manual",
+        # Filtros
+        "chk_inactivos": "Mostrar procesos inactivos",
+        "chk_ejecucion": "Solo servicios en ejecución",
+        # Paneles
+        "panel_proc": "Procesos detectados",
+        "panel_proc_sub": "Consumo alto y procesos inactivos",
+        "panel_serv": "Servicios detectados",
+        "panel_serv_sub": "Apartados por categoría del sistema",
+        # Columnas
+        "col_tipo": "Tipo",
+        "col_nombre": "Nombre",
+        "col_pid": "PID",
+        "col_cpu": "CPU %",
+        "col_ram": "RAM MB",
+        "col_riesgo": "Riesgo",
+        "col_servicio": "Servicio",
+        "col_estado": "Estado",
+        "col_inicio": "Inicio",
+        # Búsqueda
+        "buscar_proceso": "Buscar proceso…",
+        "buscar_servicio": "Buscar servicio…",
+        # Descripciones
+        "lbl_descripcion": "Selecciona un elemento para ver para qué se utiliza.",
+        "sin_descripcion": "(Sin descripción en Windows)",
+        "sin_ruta": "(Ruta no disponible)",
+        # Niveles de riesgo
+        "riesgo_alto": "Alto",
+        "riesgo_medio": "Medio",
+        "riesgo_bajo": "Bajo",
+        # Tipos de proceso
+        "tipo_alto": "Alto consumo",
+        "tipo_inactivo": "Inactivo",
+        # Estados de servicio (valores de sc.exe)
+        "estado_RUNNING": "En ejecución",
+        "estado_STOPPED": "Detenido",
+        "estado_PAUSED": "En pausa",
+        "estado_START_PENDING": "Iniciando",
+        "estado_STOP_PENDING": "Deteniendo",
+        "estado_PAUSE_PENDING": "Pausando",
+        "estado_CONTINUE_PENDING": "Reanudando",
+        # Tipos de inicio (valores de sc.exe)
+        "inicio_AUTO_START": "Automático",
+        "inicio_DEMAND_START": "Manual",
+        "inicio_DISABLED": "Deshabilitado",
+        "inicio_BOOT_START": "Arranque (boot)",
+        "inicio_SYSTEM_START": "Arranque (sistema)",
+        # Categorías (pestañas)
+        "cat_microsoft": "Microsoft",
+        "cat_wupdate": "Windows Update",
+        "cat_dispositivos": "Dispositivos",
+        "cat_red": "Red",
+        "cat_terceros": "Terceros",
+        "cat_otros": "Otros",
+        # Confirmaciones
+        "confirm_titulo": "Confirmar acción",
+        "confirm_procesos": "¿Terminar {n} proceso(s) seleccionado(s)?\n\n{lista}\n\nEsta acción no se puede deshacer.",
+        "confirm_servicios": "¿Detener y deshabilitar {n} servicio(s) seleccionado(s)?\n\n{lista}\n\nSe deshabilitarán para que Windows no los vuelva a arrancar.",
+        "confirm_manual": "¿Poner en modo Manual {n} servicio(s) seleccionado(s)?\n\n{lista}\n\nEn Manual solo arrancan cuando algo los necesita; dejan de iniciarse solos con Windows.",
+        # Estados y log
+        "estado_listo": "Listo. Pulsa Escanear para buscar procesos y servicios innecesarios.",
+        "estado_escaneando": "Escaneando procesos y servicios...",
+        "estado_escaneo_ok": "Escaneo completado: {procesos} proceso(s), {servicios} servicio(s).",
+        "estado_sin_hallazgos": "No se encontraron procesos ni servicios innecesarios.",
+        "estado_nada_seleccionado": "Selecciona al menos una fila de la tabla.",
+        "estado_accion_ok": "Acción completada: {ok} de {total}.",
+        "estado_accion_cancelada": "Acción cancelada por el usuario.",
+        "aviso_admin": "Se necesitan permisos de administrador para detener o deshabilitar servicios.",
+        "log_servicio_ok": "✓ Servicio {nombre}: detenido y deshabilitado.",
+        "log_servicio_manual_ok": "✓ Servicio {nombre}: puesto en modo Manual.",
+        "log_servicio_fail": "✗ Servicio {nombre}: {detalle}",
+        "log_proceso_ok": "✓ Proceso {nombre} terminado.",
+        "log_proceso_fail": "✗ Proceso {nombre}: no se pudo terminar.",
+        "log_sin_permiso": "✗ {nombre}: denegado (¿faltan permisos de administrador?)",
+    },
+    "en": {
+        # Header
+        "app_titulo": "Unnecessary processes and services detector v{version}",
+        "marca_titulo_1": "DETECTOR",
+        "marca_titulo_2": "HTS",
+        "marca_edicion": "UNNECESSARY PROCESSES & SERVICES · WINDOWS",
+        "chip_listo": "READY",
+        "chip_trabajando": "WORKING",
+        "chip_activo": "DONE",
+        "chip_error": "ERROR",
+        # Buttons
+        "btn_escanear": "Scan",
+        "btn_procesos": "End selected processes",
+        "btn_servicios": "Stop & disable services",
+        "btn_poner_manual": "Set services to Manual",
+        # Filters
+        "chk_inactivos": "Show inactive processes",
+        "chk_ejecucion": "Only running services",
+        # Panels
+        "panel_proc": "Detected processes",
+        "panel_proc_sub": "High usage & inactive processes",
+        "panel_serv": "Detected services",
+        "panel_serv_sub": "Grouped by system category",
+        # Columns
+        "col_tipo": "Type",
+        "col_nombre": "Name",
+        "col_pid": "PID",
+        "col_cpu": "CPU %",
+        "col_ram": "RAM MB",
+        "col_riesgo": "Risk",
+        "col_servicio": "Service",
+        "col_estado": "State",
+        "col_inicio": "Startup",
+        # Search
+        "buscar_proceso": "Search process…",
+        "buscar_servicio": "Search service…",
+        # Descriptions
+        "lbl_descripcion": "Select an item to see what it is used for.",
+        "sin_descripcion": "(No description in Windows)",
+        "sin_ruta": "(Path not available)",
+        # Risk levels
+        "riesgo_alto": "High",
+        "riesgo_medio": "Medium",
+        "riesgo_bajo": "Low",
+        # Process types
+        "tipo_alto": "High usage",
+        "tipo_inactivo": "Inactive",
+        # Service states (sc.exe values)
+        "estado_RUNNING": "Running",
+        "estado_STOPPED": "Stopped",
+        "estado_PAUSED": "Paused",
+        "estado_START_PENDING": "Starting",
+        "estado_STOP_PENDING": "Stopping",
+        "estado_PAUSE_PENDING": "Pausing",
+        "estado_CONTINUE_PENDING": "Resuming",
+        # Start types (sc.exe values)
+        "inicio_AUTO_START": "Automatic",
+        "inicio_DEMAND_START": "Manual",
+        "inicio_DISABLED": "Disabled",
+        "inicio_BOOT_START": "Boot start",
+        "inicio_SYSTEM_START": "System start",
+        # Categories (tabs)
+        "cat_microsoft": "Microsoft",
+        "cat_wupdate": "Windows Update",
+        "cat_dispositivos": "Devices",
+        "cat_red": "Network",
+        "cat_terceros": "Third-party",
+        "cat_otros": "Other",
+        # Confirmations
+        "confirm_titulo": "Confirm action",
+        "confirm_procesos": "End {n} selected process(es)?\n\n{lista}\n\nThis action cannot be undone.",
+        "confirm_servicios": "Stop & disable {n} selected service(s)?\n\n{lista}\n\nThey will be disabled so Windows does not start them again.",
+        "confirm_manual": "Set {n} selected service(s) to Manual?\n\n{lista}\n\nIn Manual they start only when something needs them; they no longer start with Windows.",
+        # Status and log
+        "estado_listo": "Ready. Press Scan to look for unnecessary processes and services.",
+        "estado_escaneando": "Scanning processes and services...",
+        "estado_escaneo_ok": "Scan complete: {procesos} process(es), {servicios} service(s).",
+        "estado_sin_hallazgos": "No unnecessary processes or services found.",
+        "estado_nada_seleccionado": "Select at least one row from the table.",
+        "estado_accion_ok": "Action complete: {ok} of {total}.",
+        "estado_accion_cancelada": "Action cancelled by the user.",
+        "aviso_admin": "Administrator rights are required to stop or disable services.",
+        "log_servicio_ok": "✓ Service {nombre}: stopped & disabled.",
+        "log_servicio_manual_ok": "✓ Service {nombre}: set to Manual.",
+        "log_servicio_fail": "✗ Service {nombre}: {detalle}",
+        "log_proceso_ok": "✓ Process {nombre} terminated.",
+        "log_proceso_fail": "✗ Process {nombre}: could not be terminated.",
+        "log_sin_permiso": "✗ {nombre}: denied (missing administrator rights?)",
+    },
+}
